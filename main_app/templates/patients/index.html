@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Patient List</h1>
+
+{% for patient in patients %}
+
+   <div class="card">
+     <a href="{% url 'detail' patient.id %}">
+        <div class="card-body">
+          <span class="card-title">{{ patient.name }}</span>
+            <p> Date Of Birth: {{ patient.d_o_b }} </p>
+            <p> Relation: {{ patient.user_relation }} </p>
+            <p> Healthcare Provider: {{ patient.healthcare }} </p>
+            <p> Appointments: {{ patient.appointments }} </p>
+            <p> Medication: {{ patient.pills }} </p>
+         </div>
+      </a>
+    </div>
+{% endfor %}
+
+{% endblock %}

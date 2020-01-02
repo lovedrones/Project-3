@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="rxlabel">
+<div class="tc-logo"><h1>Time Capsules </h1>
+<form id="register">
+<div class="form-group row">
+    <label for="inputEmail3" class="col-2 col-form-label">Email</label>
+    <div class="col-5">
+      <input type="email" class="form-control" id="inputEmail3">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-2 col-form-label">Password</label>
+    <div class="col-5">
+      <input type="password" class="form-control" id="inputPassword">
+    </div>
+  <div class="form-group row">
+    <label for="inputFName" class="col-2 col-form-label">First Name</label>
+    <div class="col-5">
+      <input type="name" class="form-control" id="inputName">
+    </div>
+  <div class="form-group row">
+    <label for="inputLName" class="col-2 col-form-label">Last Name</label>
+    <div class="col-5">
+      <input type="name" class="form-control" id="inputName">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputBdate" class="col-2 col-form-label">Birthdate</label>
+    <div class="col-5">
+      <input type="birthdate" class="form-control" id="inputBdate">
+    </div>
+  </div>
+    <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+     
+    </div>
+    <a href="/login">Already A member? Login!</a>
+  </div>
+ 
+</form>
+ </div>
+
+{% endblock %}
