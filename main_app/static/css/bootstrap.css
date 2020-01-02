@@ -4811,18 +4811,16 @@ input[type="button"].btn-block {
 .card-body {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  color: rgb(109, 109, 109);
   min-height: 1px;
   padding: 1.25rem;
 }
 
 .card-title {
   margin-bottom: 0.75rem;
-  color: 007bff;
 }
 
-.card .card-body .card-title h2 {
-  color: 007bff;
-}
+
 
 .card-subtitle {
   margin-top: -0.375rem;
@@ -4843,6 +4841,7 @@ input[type="button"].btn-block {
 
 .card-header {
   padding: 0.75rem 1.25rem;
+  color: rgb(109, 109, 109);
   margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
