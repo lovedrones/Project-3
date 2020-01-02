@@ -6,16 +6,15 @@
 {% for patient in patients %}
 
    <div class="card">
-     <a href="{% url 'detail' patient.id %}">
+    <a href="{% url 'detail' patient.name%}">
         <div class="card-body">
-          <span class="card-title">{{ patient.name }}</span>
-            <p> Date Of Birth: {{ patient.d_o_b }} </p>
-            <p> Relation: {{ patient.user_relation }} </p>
-            <p> Healthcare Provider: {{ patient.healthcare }} </p>
-            <p> Appointments: {{ patient.appointments }} </p>
-            <p> Medication: {{ patient.pills }} </p>
+          <span class="card-title"><h2>{{ patient.name }}</h2></span></a>
+            <p> <label>Date Of Birth:</label> {{ patient.d_o_b }} </p>
+            <p> <label>Relation:</label> {{ patient.user_relation }} </p>
+            <p> <label>Healthcare Provider:</label> {{ patient.healthcare }} </p>
+            <p> <label>Appointments:</label> {{ patient.appointments }} </p>
+            <p> <label> Medication:</label> {{ patient.pills }} </p>
          </div>
-      </a>
     </div>
 {% endfor %}
 

@@ -24,20 +24,21 @@
         <a class="nav-link" href="/registration">Sign up</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/patients">View All Patients</a>
+        <a class="nav-link" href="{% url 'index' %}">View All Patients</a>
       </li>
-      
     </ul>
- 
 </nav>
     </header>
+    
     <main class="container">
-        
+         {% block content %}
+        {% endblock %}
     </main>
+
+
   	<footer class="page-footer">
        <div class="right">All Rights Reserved, &copy; 2020 Time Capsule &nbsp;</div>
     </footer>
-    {% block content %}
-        {% endblock %}
+   
 </body>
 </html>
