@@ -13,12 +13,12 @@ from .models import Patient
 
 
 def home(request):
-    return render(request, 'home.html')
+  return render(request, 'home.html')
 # Updated from login to login_user
 def login_user(request):
-    return render(request, 'login.html')
+  return render(request, 'login.html')
 def registration_signup(request):
-    return render(request, 'registration/signup.html')
+  return render(request, 'registration/signup.html')
 
 
 #   Patients index, and detail views
@@ -26,9 +26,9 @@ def patients_index(request):
   patients = Patient.objects.filter(user=request.user)
   return render(request, 'patients/index.html', { 'patients': patients })
 
-def patients_detail(request, patient_id):
-   patient = Patient.objects.get(id=patient_id)
-   return render(request, 'patient/detail.html')
+def patients_detail(request, patient_name):
+    patient = Patient.objects.get(name=patient_name)
+    return render(request, 'patients/details.html', { 'patient': patient})
 
 # Pills create, update, and delete views
 class PillsCreate(CreateView):

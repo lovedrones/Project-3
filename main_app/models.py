@@ -75,7 +75,7 @@ class Appointments(models.Model):
   app_date = models.DateField()
   practioner = models.CharField(max_length=60)
   location = models.CharField(max_length=100)
-  note = models.TextField()
+  note = models.TextField(blank=True)
   def __str__(self):
     return self.name
 
