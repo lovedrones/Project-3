@@ -15,9 +15,6 @@ from .models import Patient
 def home(request):
   return render(request, 'home.html')
 # Updated from login to login_user
-def login_user(request):
-  return render(request, 'login.html')
-
 
 #   Patients index, and detail views
 def patients_index(request):
