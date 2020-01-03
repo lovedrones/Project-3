@@ -21,7 +21,7 @@ urlpatterns = [
     path('appointments/<int:pk>/delete/', views.AppointmentsDelete.as_view(), name='appointments_delete'),
 
     # create,update, and delete paths for Patients
-    path('patients/create/', views.PatientsCreate.as_view(), name='patients_create'),
+    path('patients/create/', views.patients_create, name='patients_create'),
     path('patients/<int:pk>/update/', views.PatientsUpdate.as_view(), name='patients_update'),
     path('patients/<int:pk>/delete/', views.PatientsDelete.as_view(), name='patients_delete'),
 ]
