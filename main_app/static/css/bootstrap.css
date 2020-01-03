@@ -417,7 +417,7 @@ h6, .h6 {
 }
 
 #register {
-  margin: 0 -100px -100px -100px;
+  margin: auto;
 }
 
 #inputEmail3 {
