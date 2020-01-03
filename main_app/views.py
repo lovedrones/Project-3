@@ -57,11 +57,14 @@ class AppointmentsDelete(DeleteView):
     success_url = '/patients/'
 
 # Patient create, update, and delete views
-class PatientsCreate(CreateView):
-  model = Patient
-  fields = '__all__'
-  success_url = '/patients/'
+# class PatientsCreate(CreateView):
+#   model = Patient
+#   fields = '__all__'
+#   success_url = '/patients/create/'
 
+def patients_create(request):
+    return render(request, 'patients/create.html')
+    
 class PatientsUpdate(UpdateView):
     model = Patient
     fields = '__all__'
