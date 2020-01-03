@@ -1,19 +1,17 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Pills, Appointments, Patient
-
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from .models import Patient
+from .models import Pills, Appointments, Patient
 
 # Create your views here.
 
 
 
 def home(request):
-  return render(request, 'home.html')
+      return render(request, 'home.html')
 # Updated from login to login_user
 def login_user(request):
   return render(request, 'login.html')
