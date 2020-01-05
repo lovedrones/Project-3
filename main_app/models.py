@@ -65,7 +65,7 @@ class Days(models.Model):
 class Pills(models.Model):
   name = models.CharField(max_length=80)
   total = models.IntegerField()
-  pil_days = models.ManyToManyField(Days)
+  pil_days = models.ManyToManyField(Days, blank=True)
   dosage = models.IntegerField()
   def __str__(self):
     return self.name
@@ -76,6 +76,7 @@ class Appointments(models.Model):
   practioner = models.CharField(max_length=60)
   location = models.CharField(max_length=100)
   note = models.TextField(blank=True)
+  patient_name = models.TextField(max_length=60)
   def __str__(self):
     return self.name
 
@@ -84,8 +85,8 @@ class Patient(models.Model):
   d_o_b = models.DateField()
   user_relation = models.CharField(max_length=30)
   healthcare = models.CharField(max_length=50)
-  pills = models.ManyToManyField(Pills)
-  appointments = models.ManyToManyField(Appointments)
+  pills = models.ManyToManyField(Pills , blank=True)
+  appointments = models.ManyToManyField(Appointments, blank=True)
   user = models.ForeignKey(User, on_delete=models.CASCADE)
   def __str__(self):
     return self.name
