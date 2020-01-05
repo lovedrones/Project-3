@@ -13,11 +13,6 @@ from .models import Pills, Appointments, Patient
 def home(request):
       return render(request, 'home.html')
 # Updated from login to login_user
-def login_user(request):
-  return render(request, 'login.html')
-def registration_signup(request):
-  return render(request, 'registration/signup.html')
-
 
 #   Patients index, and detail views
 def patients_index(request):
@@ -75,6 +70,7 @@ class PatientsDelete(DeleteView):
 
 # signup views
 def signup(request):
+  print('hi')
   error_message = ''
   if request.method == 'POST':
     form = UserCreationForm(request.POST)
@@ -86,4 +82,5 @@ def signup(request):
       error_message = 'Invalid sign up - try again'
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
+  print('hi')
   return render(request, 'registration/signup.html', context)
