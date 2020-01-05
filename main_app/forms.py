@@ -11,11 +11,11 @@ class PatientForm(ModelForm):
 class AppointmentsForm(ModelForm):
   class Meta:
     model = Appointments
-    exclude = ('pills', 'appointments',)
+    exclude = ('patient_name',)
 
 
-class PatientForm(ModelForm):
+class PillsForm(ModelForm):
   class Meta:
-    model = Patient
-    exclude = ('user', 'pills', 'appointments',)
+    model = Pills
+    exclude = ('patient_name',)
 
