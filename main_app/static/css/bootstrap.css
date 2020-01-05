@@ -430,10 +430,36 @@ h6, .h6 {
   margin-left: 35px
 }
 
+
+#pCard {
+  text-align: center;
+  height: 120%;
+  border-radius: 50%;
+  box-shadow: 5px 10px 8px #c67701e5;
+  background: linear-gradient(180deg,rgb(255, 252, 201) 0%, rgba(187, 162, 139, 0.7) 80%);
+  
+}
+
+#apptCard {
+  text-align: center;
+  height: 120%;
+  border-radius: 50%;
+  box-shadow: 5px 10px 8px #c67701e5;
+  background: linear-gradient(180deg,rgb(255, 252, 201) 0%, rgba(230, 109, 0, 0.7) 80%);
+}
+
+#medCard {
+  text-align: center;
+  border-radius: 50%;
+  height: 120%;
+  box-shadow: 5px 10px 8px #c67701e5;
+  background: linear-gradient(180deg, rgb(203, 237, 249) 0%, rgba(10, 169, 255, 0.7) 100%);
+  }
+
 .tc-logo {
 color: #007bff;
-margin-top: -28%;
-margin-left: 20%; 
+margin-top: -25%;
+margin-left: 10%; 
 }
 
 .lead {
@@ -4817,6 +4843,8 @@ input[type="button"].btn-block {
 }
 
 .card-title {
+  padding-bottom: 15px;
+  border-bottom: 20px groove rgba(255, 89, 0, 0.3);
   margin-bottom: 0.75rem;
 }
 
@@ -4825,6 +4853,7 @@ input[type="button"].btn-block {
 .card-subtitle {
   margin-top: -0.375rem;
   margin-bottom: 0;
+ 
 }
 
 .card-text:last-child {
@@ -4840,10 +4869,10 @@ input[type="button"].btn-block {
 }
 
 .card-header {
-  padding: 0.75rem 1.25rem;
+  padding: 0.90rem 1.25rem;
   color: rgb(109, 109, 109);
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
+  margin-left: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 

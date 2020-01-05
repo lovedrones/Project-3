@@ -1,19 +1,17 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render , redirect
 from django.http import HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Pills, Appointments, Patient
-
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from .models import Patient
-
+from .models import Pills, Appointments, Patient
+from .forms import PatientForm
 # Create your views here.
 
 
 
 def home(request):
-  return render(request, 'home.html')
+      return render(request, 'home.html')
 # Updated from login to login_user
 
 #   Patients index, and detail views
@@ -26,10 +24,12 @@ def patients_detail(request, patient_name):
     return render(request, 'patients/details.html', { 'patient': patient})
 
 # Pills create, update, and delete views
+
 class PillsCreate(CreateView):
-  model = Pills
-  fields = '__all__'
-  success_url = '/patients/'
+    model = Pills
+    fields = ['name', 'total', 'pil_days', 'dosage'] 
+    def form_valid(self, form):
+        return super().form_valid(form)
 
 class PillsUpdate(UpdateView):
     model = Pills
@@ -59,8 +59,6 @@ class AppointmentsDelete(DeleteView):
 #   fields = '__all__'
 #   success_url = '/patients/create/'
 
-def patients_create(request):
-    return render(request, 'patients/create.html')
     
 class PatientsUpdate(UpdateView):
     model = Patient
@@ -86,3 +84,23 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   print('hi')
   return render(request, 'registration/signup.html', context)
+
+
+
+
+def patients_create(request):
+    print(request.user)
+    if request.method == 'POST':
+        patient = Patient(user = request.user)
+        form = PatientForm(request.POST , instance=patient)
+        print(form)
+        if form.is_valid():
+            patient.save()
+            print('---------------------Form Validated')
+            return redirect('index')
+        else:
+            print('---------------------Form Denied')
+            return redirect('index')
+    elif request.method == 'GET':
+        return render(request, 'patients/create.html')
+

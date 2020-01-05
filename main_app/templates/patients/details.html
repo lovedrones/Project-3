@@ -1,36 +1,43 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>details</h1>
-
-<div class="card" style="width: 18rem;">
+<h1>Details</h1>
+<div class="row">
+  <div class="col-sm-4">
+<div class="card" style="width: 18rem;" id="pCard">
   <div class="card-header">
    Patient
   </div>
   <div class="card-body">
     <h5 class="card-title">{{ patient.name }}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h6 class="card-subtitle mb-2 text-muted">{{ patient.user_relation }}</h6>
+    <p class="card-text">DOB:{{ patient.d_o_b }}</p>
   </div>
 </div>
-<div class="card" style="width: 18rem;">
+</div>
+  <div class="col-sm-4">
+<div class="card" style="width: 18rem;" id="apptCard">
 <div class="card-header">
    Appointments
   </div>
   <div class="card-body">
     <h5 class="card-title">Appointments</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h6 class="card-subtitle mb-2 text-muted">{{ patient.name }}'s Doctor Appointments</h6>
+    <p class="card-text">{{ patient.appointments }} .</p>
   </div>
 </div>
-<div class="card" style="width: 18rem;">
+</div>
+  <div class="col-sm-4">
+<div class="card" style="width: 18rem;" id="medCard">
 <div class="card-header">
- Medicataions
+ Medications
   </div>
   <div class="card-body">
-    <h5 class="card-title">Medicataions</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-title">Medications</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ patient.name }}'s Medication Schedule</h6>
+    <p class="card-text">{{ patient.pills }}</p>
   </div>
+  </div>
+</div>
 </div>
 {% endblock %}
