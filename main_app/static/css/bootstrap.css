@@ -4900,7 +4900,6 @@ input[type="button"].btn-block {
   color: rgb(109, 109, 109);
   margin-bottom: 0;
   margin-left: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .card-header:first-child {
